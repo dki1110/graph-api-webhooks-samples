@@ -21,6 +21,12 @@ This is a sample client for Facebook's [Webhooks](https://developers.facebook.co
 
 ### Memo
 
+- env settings  
+    - process.env.PORT: ポート
+    - process.env.APP_SECRET: Facebookのアプリの[アプリダッシュボード](https://developers.facebook.com/apps)から取得
+    - process.env.TOKEN: 任意の文字列。未設定の場合は"token"。
+    - process.env.SLACK: slackのwebhook。発行方法はこちらを[参照](https://docs.trocco.io/s/article/Slack%E3%81%A7Webhook-URL%E3%82%92%E7%99%BA%E8%A1%8C%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95?language=ja)
+
 - [Webhooks](https://developers.facebook.com/docs/graph-api/webhooks)
 
 - [Slack通知をNode.jsでもやってみる](https://ccbaxy.xyz/blog/2020/01/14/node2/) 
