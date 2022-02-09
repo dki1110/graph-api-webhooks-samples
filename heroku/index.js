@@ -11,6 +11,8 @@ var express = require('express');
 var app = express();
 var xhub = require('express-x-hub');
 
+const { IncomingWebhook } = require("@slack/webhook");
+
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
 
@@ -44,6 +46,14 @@ app.post('/facebook', function(req, res) {
     res.sendStatus(401);
     return;
   }
+
+  const webhook = new IncomingWebhook(process.env.SLACK);
+
+  (async () => {
+    await webhook.send({
+      text: req.body,
+    });
+  })();
 
   console.log('request header X-Hub-Signature validated');
   // Process the Facebook updates here
